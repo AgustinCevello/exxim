@@ -1,3 +1,4 @@
+import logo from './assets/exximLogoTransparente.png'
 import './App.css'
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
     <div className="app-container">
       <main className="logo-section">
         <img
-          src="/exximLogoTransparente.png"
+          src={logo}
           alt="EXXIM Logo"
           className="brand-logo"
         />
