@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom'
-import Icon from '../ui/Icon'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
 import ServiceCard from '../ui/ServiceCard'
@@ -11,18 +9,12 @@ export default function ServicesPreview() {
   return (
     <section className="section surface-alt">
       <div className="container-x">
-        <div className="svc-preview-head">
-          <SectionHeading
-            eyebrow={t('services.eyebrow')}
-            title={t('services.title')}
-            intro={t('services.intro')}
-            maxWidth="38rem"
-          />
-          <Link to="/servicios" className="btn btn-outline btn-sm svc-preview-all">
-            {t('cta.allServices')}
-            <Icon name="arrow-right" size={16} />
-          </Link>
-        </div>
+        <SectionHeading
+          eyebrow={t('services.eyebrow')}
+          title={t('services.title')}
+          intro={t('services.intro')}
+          maxWidth="40rem"
+        />
 
         <div className="svc-preview-grid">
           {services.map((s, i) => (
@@ -34,8 +26,6 @@ export default function ServicesPreview() {
       </div>
 
       <style>{`
-        .svc-preview-head{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end;justify-content:space-between;}
-        .svc-preview-all{flex-shrink:0;}
         .svc-preview-grid{
           display:grid;grid-template-columns:1fr;gap:1.4rem;margin-top:3rem;
         }

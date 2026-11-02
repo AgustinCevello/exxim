@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Wordmark } from '../ui/Logo'
 import Icon from '../ui/Icon'
 import { company, navLinks, services } from '../../data/site'
@@ -18,25 +17,26 @@ export default function Footer() {
             <p style={{ marginTop: '1rem', fontSize: '.95rem', lineHeight: 1.65, color: 'rgba(205,216,227,.78)' }}>
               {t('footer.tagline')}
             </p>
-            <Link
-              to="/contacto"
+            <a
+              href="#contacto"
               className="btn btn-primary btn-sm"
               style={{ marginTop: '1.4rem' }}
             >
               {t('cta.quote')}
               <Icon name="arrow-right" size={16} />
-            </Link>
+            </a>
           </div>
 
           {/* Navegación */}
           <div>
             <h4 className="footer-title">{t('footer.nav')}</h4>
             <ul className="footer-list">
+              <li><a href="#top" className="footer-link">{t('nav.home')}</a></li>
               {navLinks.map((l) => (
-                <li key={l.to}>
-                  <Link to={l.to} className="footer-link">
+                <li key={l.id}>
+                  <a href={`#${l.id}`} className="footer-link">
                     {t(l.key)}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -48,9 +48,9 @@ export default function Footer() {
             <ul className="footer-list">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link to={`/servicios#${s.slug}`} className="footer-link">
+                  <a href="#servicios" className="footer-link">
                     {L(s.title)}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

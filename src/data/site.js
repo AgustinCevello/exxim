@@ -9,20 +9,22 @@ export const company = {
   address: 'Av. Rivadavia 877, piso 5, Ciudad Autónoma de Buenos Aires',
   addressShort: 'Av. Rivadavia 877, 5° — CABA',
   email: 'contacto@exximsrl.com.ar',
-  whatsapp: '+54 9 11 5555-0123',
-  whatsappHref: 'https://wa.me/5491155550123',
-  phone: '+54 11 4000-0000',
+  whatsapp: '+54 9 11 6155-5520',
+  whatsappHref: 'https://wa.me/5491161555520',
+  phone: '+54 9 11 6155-5520',
+  phoneHref: 'tel:+5491161555520',
   coords: { lat: -34.609, lng: -58.3845 },
 }
 
+/* Secciones de la landing (una sola página). El `id` ancla el scroll
+   y `key` es la etiqueta traducible que se muestra en la navegación. */
 export const navLinks = [
-  { key: 'nav.home', to: '/' },
-  { key: 'nav.about', to: '/nosotros' },
-  { key: 'nav.services', to: '/servicios' },
-  { key: 'nav.clients', to: '/clientes' },
-  { key: 'nav.international', to: '/presencia-internacional' },
-  { key: 'nav.news', to: '/novedades' },
-  { key: 'nav.contact', to: '/contacto' },
+  { key: 'nav.about', id: 'nosotros' },
+  { key: 'nav.services', id: 'servicios' },
+  { key: 'nav.clients', id: 'clientes' },
+  { key: 'nav.internationalShort', id: 'internacional' },
+  { key: 'nav.news', id: 'novedades' },
+  { key: 'nav.contact', id: 'contacto' },
 ]
 
 export const valueProps = [

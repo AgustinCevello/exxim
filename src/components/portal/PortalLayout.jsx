@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate, Navigate } from 'react-router-dom'
 import Icon from '../ui/Icon'
 import { Wordmark } from '../ui/Logo'
-import SettingsMenu from '../ui/SettingsMenu'
+import ThemeToggle from '../ui/ThemeToggle'
+import LangToggle from '../ui/LangToggle'
 import { useAuth } from '../../context/AuthContext'
 import { useI18n } from '../../i18n/I18nContext'
 import { demoClient } from '../../data/portal'
@@ -28,6 +29,12 @@ export default function PortalLayout() {
   const onLogout = () => {
     logout()
     navigate('/portal')
+  }
+
+  // En el tablero, "atrás" lleva al sitio público; en el resto, al paso previo.
+  const onBack = () => {
+    if (location.pathname === '/portal/operaciones') navigate('/')
+    else navigate(-1)
   }
 
   return (
@@ -85,12 +92,16 @@ export default function PortalLayout() {
             <button className="portal-burger" onClick={() => setDrawer(true)} aria-label={t('nav.menu')}>
               <Icon name="menu" size={22} />
             </button>
+            <button className="portal-back" onClick={onBack} aria-label={t('opd.back')} title={t('opd.back')}>
+              <Icon name="arrow-left" size={18} />
+            </button>
             <p className="portal-greeting">
               <span className="t-muted">{t('portal.greeting')},</span>{' '}
               <strong>{demoClient.company}</strong>
             </p>
             <div className="portal-topbar-actions">
-              <SettingsMenu compact />
+              <LangToggle />
+              <ThemeToggle />
               <button className="portal-logout-btn" onClick={onLogout} aria-label={t('portal.logout')}>
                 <Icon name="logout" size={18} />
               </button>
@@ -98,7 +109,9 @@ export default function PortalLayout() {
           </header>
 
           <div className="portal-content">
-            <Outlet />
+            <div className="route-fade" key={location.pathname}>
+              <Outlet />
+            </div>
           </div>
         </div>
       </div>
@@ -142,6 +155,10 @@ export default function PortalLayout() {
         .portal-topbar{position:sticky;top:33px;z-index:35;display:flex;align-items:center;gap:1rem;
           padding:.85rem 1.25rem;background:var(--surface);border-bottom:1px solid var(--border);}
         .portal-burger{display:inline-flex;background:none;border:0;color:var(--heading);cursor:pointer;}
+        .portal-back{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+          border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--heading);
+          cursor:pointer;flex-shrink:0;transition:border-color .16s ease,background .16s ease,color .16s ease;}
+        .portal-back:hover{border-color:var(--color-accent-500);color:var(--accent);background:var(--surface-2);}
         .portal-greeting{font-size:.95rem;color:var(--heading);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
         .portal-topbar-actions{margin-left:auto;display:flex;align-items:center;gap:.6rem;}
         .portal-logout-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;

@@ -106,7 +106,9 @@ export default function Operations() {
                     {typeLabel(o.type)}
                   </span>
                 </td>
-                <td className="ops-route">{L(o.originCity)} <Icon name="arrow-right" size={13} /> {L(o.destinationCity)}</td>
+                <td className="ops-route">
+                  <span className="ops-route-inner">{L(o.originCity)} <Icon name="arrow-right" size={13} /> {L(o.destinationCity)}</span>
+                </td>
                 <td><StatusBadge status={o.status} /></td>
                 <td className="t-muted">{formatDate(o.updatedAt, lang)}</td>
                 <td><Icon name="chevron-right" size={18} className="ops-chevron" /></td>
@@ -144,9 +146,16 @@ export default function Operations() {
         .ops-summary{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
         .ops-filters{display:flex;flex-wrap:wrap;gap:.75rem;padding:.85rem;margin-bottom:1.25rem;}
         .filter-field{display:flex;align-items:center;gap:.5rem;background:var(--surface-2);
-          border:1px solid var(--border);border-radius:9px;padding:.1rem .7rem;color:var(--text-muted);}
+          border:1px solid var(--border);border-radius:9px;padding:.1rem .7rem;color:var(--text-muted);
+          transition:border-color .16s ease, box-shadow .16s ease;}
+        .filter-field:focus-within{border-color:var(--color-accent-500);
+          box-shadow:0 0 0 3px rgba(232,116,42,.14);}
         .filter-field select,.filter-field input{border:0;background:transparent;color:var(--heading);
           font-size:.9rem;font-family:inherit;padding:.55rem 0;outline:none;min-width:0;}
+        .filter-field select{appearance:none;-webkit-appearance:none;cursor:pointer;
+          padding-right:1.4rem;font-weight:500;
+          background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a6b7b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");
+          background-repeat:no-repeat;background-position:right center;}
         .filter-search{flex:1;min-width:180px;}
         .filter-search input{width:100%;}
 
@@ -164,8 +173,9 @@ export default function Operations() {
         .ops-type--export{background:rgba(232,116,42,.12);color:var(--color-accent-700);}
         :root[data-theme='dark'] .ops-type--import{color:#7ba0c7;}
         :root[data-theme='dark'] .ops-type--export{color:var(--color-accent-400);}
-        .ops-route{color:var(--text);display:flex;align-items:center;gap:.4rem;}
-        .ops-route svg{color:var(--text-muted);}
+        .ops-route{color:var(--text);}
+        .ops-route-inner{display:inline-flex;align-items:center;gap:.4rem;flex-wrap:wrap;}
+        .ops-route-inner svg{color:var(--text-muted);flex-shrink:0;}
         .ops-chevron{color:var(--text-muted);}
 
         .ops-cards{display:grid;gap:.9rem;padding:.9rem;}

@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom'
 import Icon from './Icon'
 import { useI18n } from '../../i18n/I18nContext'
 
-/* Tarjeta de servicio. variant: 'compact' (home) | 'full' (página servicios). */
+/* Tarjeta de servicio. variant: 'compact' | 'full' (con bullets). */
 export default function ServiceCard({ service, variant = 'compact' }) {
   const { t, L } = useI18n()
   const full = variant === 'full'
@@ -31,13 +30,6 @@ export default function ServiceCard({ service, variant = 'compact' }) {
             ))}
           </ul>
         </>
-      )}
-
-      {!full && (
-        <Link to={`/servicios#${service.slug}`} className="link-arrow svc-link">
-          {t('cta.viewService')}
-          <Icon name="arrow-right" size={16} />
-        </Link>
       )}
 
       <style>{`

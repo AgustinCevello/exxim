@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Icon from '../ui/Icon'
 import Reveal from '../ui/Reveal'
 import MaritimeBackdrop from '../ui/MaritimeBackdrop'
@@ -18,10 +17,10 @@ export default function CTABand() {
           <h2 className="cta-title">{t('ctaband.title')}</h2>
           <p className="cta-text">{t('ctaband.text')}</p>
           <div className="cta-actions">
-            <Link to="/contacto" className="btn btn-primary">
+            <a href="#contacto" className="btn btn-primary">
               {t('ctaband.primary')}
               <Icon name="arrow-right" size={17} />
-            </Link>
+            </a>
             <a href={company.whatsappHref} target="_blank" rel="noreferrer" className="btn btn-ghost-light">
               <Icon name="whatsapp" size={18} />
               {t('ctaband.secondary')}

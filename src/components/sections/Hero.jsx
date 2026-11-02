@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import Icon from '../ui/Icon'
 import MaritimeBackdrop from '../ui/MaritimeBackdrop'
 import { media } from '../../data/site'
@@ -8,7 +7,7 @@ export default function Hero() {
   const { t } = useI18n()
 
   return (
-    <section className="hero">
+    <section className="hero" id="top">
       {/* Capas de fondo: color base + foto + degradado + motivo marítimo */}
       <div className="hero-photo" style={{ backgroundImage: `url(${media.heroPort})` }} />
       <div className="hero-overlay" />
@@ -21,13 +20,13 @@ export default function Hero() {
           <p className="hero-subtitle">{t('hero.subtitle')}</p>
 
           <div className="hero-cta">
-            <Link to="/contacto" className="btn btn-primary">
+            <a href="#contacto" className="btn btn-primary">
               {t('cta.quote')}
               <Icon name="arrow-right" size={17} />
-            </Link>
-            <Link to="/nosotros" className="btn btn-ghost-light">
+            </a>
+            <a href="#nosotros" className="btn btn-ghost-light">
               {t('cta.learnMore')}
-            </Link>
+            </a>
           </div>
 
           <div className="hero-stats">

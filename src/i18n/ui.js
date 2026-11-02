@@ -32,6 +32,7 @@ export const translations = {
     'nav.services': 'Servicios',
     'nav.clients': 'Clientes',
     'nav.international': 'Presencia internacional',
+    'nav.internationalShort': 'Internacional',
     'nav.news': 'Novedades',
     'nav.contact': 'Contacto',
     'nav.menu': 'Menú',
@@ -156,7 +157,9 @@ export const translations = {
     'contact.whatsapp': 'WhatsApp',
     'contact.hours': 'Horario de atención',
     'contact.hoursValue': 'Lunes a viernes, 9 a 18 h',
+    'contact.phoneLabel': 'Teléfono',
     'contact.required': 'Este campo es obligatorio',
+    'contact.invalidEmail': 'Ingrese un email válido',
 
     // Footer
     'footer.tagline':
@@ -310,6 +313,7 @@ export const translations = {
     'nav.services': 'Services',
     'nav.clients': 'Clients',
     'nav.international': 'Global presence',
+    'nav.internationalShort': 'Global',
     'nav.news': 'News',
     'nav.contact': 'Contact',
     'nav.menu': 'Menu',
@@ -431,7 +435,9 @@ export const translations = {
     'contact.whatsapp': 'WhatsApp',
     'contact.hours': 'Business hours',
     'contact.hoursValue': 'Monday to Friday, 9 am – 6 pm',
+    'contact.phoneLabel': 'Phone',
     'contact.required': 'This field is required',
+    'contact.invalidEmail': 'Enter a valid email',
 
     // Footer
     'footer.tagline':

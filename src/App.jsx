@@ -1,14 +1,8 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link, Navigate, Route, Routes } from 'react-router-dom'
 import ScrollToTop from './components/layout/ScrollToTop'
 import PublicLayout from './components/layout/PublicLayout'
 import PortalLayout from './components/portal/PortalLayout'
-import Home from './pages/Home'
-import About from './pages/About'
-import Services from './pages/Services'
-import Clients from './pages/Clients'
-import International from './pages/International'
-import News from './pages/News'
-import Contact from './pages/Contact'
+import Landing from './pages/Landing'
 import Login from './pages/portal/Login'
 import Operations from './pages/portal/Operations'
 import OperationDetail from './pages/portal/OperationDetail'
@@ -34,17 +28,19 @@ export default function App() {
     <>
       <ScrollToTop />
       <Routes>
-        {/* Sitio público */}
+        {/* Sitio público — landing de una sola página */}
         <Route element={<PublicLayout />}>
-          <Route index element={<Home />} />
-          <Route path="nosotros" element={<About />} />
-          <Route path="servicios" element={<Services />} />
-          <Route path="clientes" element={<Clients />} />
-          <Route path="presencia-internacional" element={<International />} />
-          <Route path="novedades" element={<News />} />
-          <Route path="contacto" element={<Contact />} />
+          <Route index element={<Landing />} />
           <Route path="*" element={<NotFound />} />
         </Route>
+
+        {/* Redirecciones de las rutas antiguas a las secciones de la landing */}
+        <Route path="/nosotros" element={<Navigate to="/#nosotros" replace />} />
+        <Route path="/servicios" element={<Navigate to="/#servicios" replace />} />
+        <Route path="/clientes" element={<Navigate to="/#clientes" replace />} />
+        <Route path="/presencia-internacional" element={<Navigate to="/#internacional" replace />} />
+        <Route path="/novedades" element={<Navigate to="/#novedades" replace />} />
+        <Route path="/contacto" element={<Navigate to="/#contacto" replace />} />
 
         {/* Portal — login */}
         <Route path="/portal" element={<Login />} />

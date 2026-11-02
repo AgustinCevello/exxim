@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import Icon from '../../components/ui/Icon'
 import { Wordmark } from '../../components/ui/Logo'
 import MaritimeBackdrop from '../../components/ui/MaritimeBackdrop'
-import SettingsMenu from '../../components/ui/SettingsMenu'
+import ThemeToggle from '../../components/ui/ThemeToggle'
+import LangToggle from '../../components/ui/LangToggle'
 import { useAuth } from '../../context/AuthContext'
 import { useI18n } from '../../i18n/I18nContext'
 import { demoCredentials } from '../../data/portal'
@@ -60,7 +61,8 @@ export default function Login() {
       {/* Formulario */}
       <main className="login-main">
         <div className="login-topbar">
-          <SettingsMenu />
+          <LangToggle />
+          <ThemeToggle />
         </div>
 
         <div className="login-card-wrap">
@@ -143,7 +145,7 @@ export default function Login() {
         .login-back:hover{color:#fff;}
 
         .login-main{display:flex;flex-direction:column;}
-        .login-topbar{display:flex;justify-content:flex-end;padding:1.25rem 1.5rem 0;}
+        .login-topbar{display:flex;justify-content:flex-end;align-items:center;gap:.6rem;padding:1.25rem 1.5rem 0;}
         .login-card-wrap{flex:1;display:flex;align-items:center;justify-content:center;padding:1.5rem;}
         .login-card{width:100%;max-width:420px;}
         .login-card-head{margin-bottom:1.5rem;}
