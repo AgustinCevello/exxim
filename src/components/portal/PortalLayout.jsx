@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, Outlet, useLocation, useNavigate, Navigate } from 'react-router-dom'
 import Icon from '../ui/Icon'
 import { Wordmark } from '../ui/Logo'
-import ThemeToggle from '../ui/ThemeToggle'
-import LangToggle from '../ui/LangToggle'
+import SettingsMenu from '../ui/SettingsMenu'
 import { useAuth } from '../../context/AuthContext'
 import { useI18n } from '../../i18n/I18nContext'
 import { demoClient } from '../../data/portal'
@@ -100,8 +99,7 @@ export default function PortalLayout() {
               <strong>{demoClient.company}</strong>
             </p>
             <div className="portal-topbar-actions">
-              <LangToggle />
-              <ThemeToggle />
+              <SettingsMenu />
               <button className="portal-logout-btn" onClick={onLogout} aria-label={t('portal.logout')}>
                 <Icon name="logout" size={18} />
               </button>

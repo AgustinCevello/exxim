@@ -4,6 +4,7 @@ import { Wordmark } from '../ui/Logo'
 import Icon from '../ui/Icon'
 import ThemeToggle from '../ui/ThemeToggle'
 import LangToggle from '../ui/LangToggle'
+import SettingsMenu from '../ui/SettingsMenu'
 import { navLinks } from '../../data/site'
 import { useI18n } from '../../i18n/I18nContext'
 
@@ -76,8 +77,7 @@ export default function Navbar() {
 
         {/* Acciones desktop */}
         <div className="nav-actions">
-          <LangToggle />
-          <ThemeToggle />
+          <SettingsMenu />
           <Link to="/portal" className="btn btn-outline btn-sm">
             {t('cta.portal')}
           </Link>
@@ -135,25 +135,26 @@ export default function Navbar() {
       </div>
 
       <style>{`
-        .nav-logo{flex-shrink:0;display:inline-flex;align-items:center;}
+        .nav-logo{flex-shrink:0;display:inline-flex;align-items:center;margin-right:.25rem;}
         .nav-link{
-          font-size:.93rem;font-weight:500;color:var(--text);padding:.4rem .1rem;
+          font-family:var(--font-sans);font-size:1rem;font-weight:600;letter-spacing:-0.01em;
+          color:var(--text);padding:.45rem .15rem;
           position:relative;transition:color .18s ease;white-space:nowrap;cursor:pointer;
         }
         .nav-link:hover{color:var(--heading);}
         .nav-link.active{color:var(--accent);}
         .nav-link::after{
-          content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;
+          content:'';position:absolute;left:0;right:0;bottom:-5px;height:2px;
           background:var(--color-accent-500);border-radius:2px;
           transform:scaleX(0);transform-origin:left;transition:transform .22s ease;
         }
         .nav-link:hover::after{transform:scaleX(.5);}
         .nav-link.active::after{transform:scaleX(1);}
         .nav-links{
-          display:none;list-style:none;margin:0;padding:0;gap:1.35rem;align-items:center;
-          margin-left:.5rem;
+          display:none;list-style:none;margin:0;padding:0;gap:1.6rem;align-items:center;
+          margin-inline:auto;
         }
-        .nav-actions{display:none;align-items:center;gap:.6rem;margin-left:auto;}
+        .nav-actions{display:none;align-items:center;gap:.6rem;flex-shrink:0;}
         .nav-burger{
           display:inline-flex;align-items:center;justify-content:center;margin-left:auto;
           width:44px;height:44px;border-radius:9px;border:1px solid var(--border);

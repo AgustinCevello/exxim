@@ -3,8 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Icon from '../../components/ui/Icon'
 import { Wordmark } from '../../components/ui/Logo'
 import MaritimeBackdrop from '../../components/ui/MaritimeBackdrop'
-import ThemeToggle from '../../components/ui/ThemeToggle'
-import LangToggle from '../../components/ui/LangToggle'
+import SettingsMenu from '../../components/ui/SettingsMenu'
 import { useAuth } from '../../context/AuthContext'
 import { useI18n } from '../../i18n/I18nContext'
 import { demoCredentials } from '../../data/portal'
@@ -61,8 +60,7 @@ export default function Login() {
       {/* Formulario */}
       <main className="login-main">
         <div className="login-topbar">
-          <LangToggle />
-          <ThemeToggle />
+          <SettingsMenu />
         </div>
 
         <div className="login-card-wrap">
