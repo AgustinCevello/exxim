@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { CircleMarker, MapContainer, Polyline, Popup, TileLayer, Tooltip } from 'react-leaflet'
 import { countries } from '../../data/site'
 import { useI18n } from '../../i18n/I18nContext'
@@ -6,11 +7,30 @@ const home = countries.find((c) => c.home)
 const others = countries.filter((c) => !c.home)
 
 export default function CorrespondentMap() {
-  const { L } = useI18n()
+  const { L, t } = useI18n()
+  const [map, setMap] = useState(null)
+  const [active, setActive] = useState(false)
+
+  // El mapa arranca "bloqueado": no captura el scroll de la página.
+  // Se activa al hacer clic y se vuelve a bloquear al salir con el mouse.
+  useEffect(() => {
+    if (!map) return
+    const parts = ['dragging', 'scrollWheelZoom', 'doubleClickZoom', 'touchZoom', 'boxZoom', 'keyboard']
+    parts.forEach((p) => {
+      if (map[p]) active ? map[p].enable() : map[p].disable()
+    })
+    if (map.tap) active ? map.tap.enable() : map.tap.disable()
+  }, [map, active])
 
   return (
-    <div className="corr-map panel">
+    <div className="corr-map panel" onMouseLeave={() => setActive(false)}>
+      {!active && (
+        <button type="button" className="map-gate" onClick={() => setActive(true)} aria-label={t('map.activate')}>
+          <span className="map-gate-pill">{t('map.activate')}</span>
+        </button>
+      )}
       <MapContainer
+        ref={setMap}
         center={[10, -30]}
         zoom={2}
         minZoom={2}
@@ -80,8 +100,14 @@ export default function CorrespondentMap() {
       </MapContainer>
 
       <style>{`
-        .corr-map{height:clamp(340px,52vh,520px);overflow:hidden;padding:0;}
+        .corr-map{position:relative;isolation:isolate;height:clamp(340px,52vh,520px);overflow:hidden;padding:0;}
         .corr-map .leaflet-container{border-radius:14px;}
+        .map-gate{position:absolute;inset:0;z-index:1200;display:flex;align-items:flex-end;
+          justify-content:center;padding-bottom:16px;background:transparent;border:0;cursor:pointer;}
+        .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(10,21,33,.82);
+          color:#fff;font-size:.82rem;font-weight:600;padding:.5rem .9rem;border-radius:999px;
+          box-shadow:0 4px 16px rgba(0,0,0,.35);transition:background .18s ease;}
+        .map-gate:hover .map-gate-pill{background:rgba(10,21,33,.94);}
       `}</style>
     </div>
   )

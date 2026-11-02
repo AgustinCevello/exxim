@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Wordmark } from '../ui/Logo'
-import Icon from '../ui/Icon'
 import ThemeToggle from '../ui/ThemeToggle'
 import LangToggle from '../ui/LangToggle'
 import SettingsMenu from '../ui/SettingsMenu'
@@ -77,62 +76,71 @@ export default function Navbar() {
 
         {/* Acciones desktop */}
         <div className="nav-actions">
-          <SettingsMenu />
           <Link to="/portal" className="btn btn-outline btn-sm">
             {t('cta.portal')}
           </Link>
           <a href="#contacto" className="btn btn-primary btn-sm">
             {t('cta.quote')}
           </a>
+          <SettingsMenu />
         </div>
 
-        {/* Botón hamburguesa */}
+        {/* Botón hamburguesa animado (3 líneas → X) */}
         <button
           type="button"
-          className="nav-burger"
+          className={`nav-burger ${open ? 'is-open' : ''}`}
           aria-label={t('nav.menu')}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
-          <Icon name={open ? 'close' : 'menu'} size={24} />
+          <span className="burger-box" aria-hidden="true">
+            <span className="burger-line" />
+            <span className="burger-line" />
+            <span className="burger-line" />
+          </span>
         </button>
       </nav>
 
-      {/* Panel móvil */}
-      <div className={`mobile-panel ${open ? 'is-open' : ''}`} aria-hidden={!open}>
-        <div className="mobile-panel-inner">
-          <ul className="mobile-links">
-            {navLinks.map((l) => (
-              <li key={l.id}>
-                <a href={`#${l.id}`} className="mobile-link" onClick={() => setOpen(false)}>
-                  <span>{t(l.key)}</span>
-                  <Icon name="chevron-right" size={18} />
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div className="mobile-cta">
-            <Link to="/portal" className="btn btn-outline" style={{ width: '100%' }} onClick={() => setOpen(false)}>
-              {t('cta.portal')}
-            </Link>
-            <a href="#contacto" className="btn btn-primary" style={{ width: '100%' }} onClick={() => setOpen(false)}>
-              {t('cta.quote')}
+      {/* Scrim + panel móvil (drawer lateral derecho) */}
+      <div
+        className={`mobile-scrim ${open ? 'is-open' : ''}`}
+        onClick={() => setOpen(false)}
+        aria-hidden="true"
+      />
+      <aside className={`mobile-panel ${open ? 'is-open' : ''}`} aria-hidden={!open}>
+        <nav className="mobile-links" aria-label={t('nav.menu')}>
+          {navLinks.map((l) => (
+            <a
+              key={l.id}
+              href={`#${l.id}`}
+              className={`mobile-link ${active === l.id ? 'active' : ''}`}
+              onClick={() => setOpen(false)}
+            >
+              {t(l.key)}
             </a>
-          </div>
+          ))}
+        </nav>
 
-          <div className="mobile-settings">
-            <div className="mobile-settings-row">
-              <span className="mobile-settings-label">{t('settings.language')}</span>
-              <LangToggle />
-            </div>
-            <div className="mobile-settings-row">
-              <span className="mobile-settings-label">{t('settings.appearance')}</span>
-              <ThemeToggle />
-            </div>
+        <div className="mobile-cta">
+          <Link to="/portal" className="btn btn-outline" style={{ width: '100%' }} onClick={() => setOpen(false)}>
+            {t('cta.portal')}
+          </Link>
+          <a href="#contacto" className="btn btn-primary" style={{ width: '100%' }} onClick={() => setOpen(false)}>
+            {t('cta.quote')}
+          </a>
+        </div>
+
+        <div className="mobile-settings">
+          <div className="mobile-settings-row">
+            <span className="mobile-settings-label">{t('settings.language')}</span>
+            <LangToggle />
+          </div>
+          <div className="mobile-settings-row">
+            <span className="mobile-settings-label">{t('settings.appearance')}</span>
+            <ThemeToggle />
           </div>
         </div>
-      </div>
+      </aside>
 
       <style>{`
         .nav-logo{flex-shrink:0;display:inline-flex;align-items:center;margin-right:.25rem;}
@@ -157,30 +165,47 @@ export default function Navbar() {
         .nav-actions{display:none;align-items:center;gap:.6rem;flex-shrink:0;}
         .nav-burger{
           display:inline-flex;align-items:center;justify-content:center;margin-left:auto;
-          width:44px;height:44px;border-radius:9px;border:1px solid var(--border);
+          width:44px;height:44px;border-radius:10px;border:1px solid var(--border);
           background:var(--surface);color:var(--heading);cursor:pointer;
           transition:border-color .16s ease, background .16s ease;
         }
         .nav-burger:hover{border-color:var(--color-accent-500);background:var(--surface-2);}
+        /* Ícono hamburguesa animado → X */
+        .burger-box{position:relative;width:22px;height:16px;display:inline-block;}
+        .burger-line{position:absolute;left:0;width:100%;height:2px;border-radius:2px;
+          background:currentColor;
+          transition:top .3s cubic-bezier(.4,0,.2,1), transform .3s cubic-bezier(.4,0,.2,1), opacity .2s ease;}
+        .burger-line:nth-child(1){top:0;}
+        .burger-line:nth-child(2){top:7px;}
+        .burger-line:nth-child(3){top:14px;}
+        .nav-burger.is-open .burger-line:nth-child(1){top:7px;transform:rotate(45deg);}
+        .nav-burger.is-open .burger-line:nth-child(2){opacity:0;transform:scaleX(.2);}
+        .nav-burger.is-open .burger-line:nth-child(3){top:7px;transform:rotate(-45deg);}
 
-        /* Panel móvil */
+        /* Scrim + drawer lateral derecho */
+        .mobile-scrim{position:fixed;left:0;right:0;top:72px;bottom:0;
+          background:rgba(10,21,33,.5);z-index:54;
+          opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s;}
+        .mobile-scrim.is-open{opacity:1;visibility:visible;}
         .mobile-panel{
-          position:fixed;left:0;right:0;top:72px;bottom:0;background:var(--page);
+          position:fixed;top:72px;right:0;bottom:0;width:min(82vw,280px);
+          background:var(--surface);border-left:1px solid var(--border);box-shadow:var(--shadow-lift);
           transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
-          overflow-y:auto;z-index:55;
+          overflow-y:auto;z-index:55;padding:1.4rem 1.25rem 1.75rem;
+          display:flex;flex-direction:column;gap:1.25rem;
         }
         .mobile-panel.is-open{transform:translateX(0);}
-        .mobile-panel-inner{padding:1.25rem 1.25rem 2.5rem;max-width:560px;margin:0 auto;}
-        .mobile-links{list-style:none;margin:0 0 1.25rem;padding:0;}
+        .mobile-links{display:flex;flex-direction:column;gap:.15rem;}
         .mobile-link{
-          display:flex;align-items:center;justify-content:space-between;cursor:pointer;
-          padding:1rem .25rem;font-size:1.1rem;font-weight:500;color:var(--heading);
-          border-bottom:1px solid var(--border-soft);transition:color .16s ease;
+          padding:.6rem .45rem;font-size:1.02rem;font-weight:600;color:var(--heading);
+          border-radius:8px;cursor:pointer;transition:color .16s ease,background .16s ease;
         }
-        .mobile-link:hover{color:var(--accent);}
-        .mobile-cta{display:grid;gap:.6rem;margin-bottom:1.5rem;}
+        .mobile-link:hover{color:var(--accent);background:var(--surface-2);}
+        .mobile-link.active{color:var(--accent);}
+        .mobile-cta{display:grid;gap:.6rem;}
         .mobile-settings{
           border-top:1px solid var(--border-soft);padding-top:1.25rem;display:grid;gap:1rem;
+          margin-top:auto;
         }
         .mobile-settings-row{display:flex;align-items:center;justify-content:space-between;}
         .mobile-settings-label{

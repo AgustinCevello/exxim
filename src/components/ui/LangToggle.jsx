@@ -1,27 +1,25 @@
 import { useI18n } from '../../i18n/I18nContext'
 
-/* Toggle de idioma ES / EN (ancho fijo: no desplaza el layout al cambiar). */
+/* Switch de idioma ES / EN: un clic en cualquier parte alterna el idioma
+   (igual que el switch de tema). El thumb se desliza a la opción activa. */
 export default function LangToggle() {
   const { lang, setLang } = useI18n()
+  const isEn = lang === 'en'
 
   return (
-    <div className="lang-toggle" role="group" aria-label="Idioma / Language">
-      <button
-        type="button"
-        className={lang === 'es' ? 'is-active' : ''}
-        aria-pressed={lang === 'es'}
-        onClick={() => setLang('es')}
-      >
-        ES
-      </button>
-      <button
-        type="button"
-        className={lang === 'en' ? 'is-active' : ''}
-        aria-pressed={lang === 'en'}
-        onClick={() => setLang('en')}
-      >
-        EN
-      </button>
-    </div>
+    <button
+      type="button"
+      className="lang-switch"
+      role="switch"
+      aria-checked={isEn}
+      aria-label="Idioma / Language"
+      title={isEn ? 'Cambiar a español' : 'Switch to English'}
+      data-lang={lang}
+      onClick={() => setLang(isEn ? 'es' : 'en')}
+    >
+      <span className="lang-thumb" aria-hidden="true" />
+      <span className={`lang-opt ${!isEn ? 'is-active' : ''}`}>ES</span>
+      <span className={`lang-opt ${isEn ? 'is-active' : ''}`}>EN</span>
+    </button>
   )
 }

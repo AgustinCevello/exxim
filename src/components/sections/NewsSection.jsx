@@ -37,9 +37,7 @@ export default function NewsSection() {
 
       <style>{`
         .news-sec-grid{display:grid;grid-template-columns:1fr;gap:1.4rem;margin-top:3rem;}
-        .news-sec-card{padding:1.6rem;display:flex;flex-direction:column;height:100%;
-          transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;}
-        .news-sec-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--color-accent-300);}
+        .news-sec-card{padding:1.6rem;display:flex;flex-direction:column;height:100%;}
         .news-sec-meta{display:flex;align-items:center;justify-content:space-between;gap:.5rem;
           font-size:.8rem;margin-bottom:.9rem;}
         .news-sec-cat{font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.7rem;

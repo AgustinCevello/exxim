@@ -57,8 +57,20 @@ function MovingMarker({ curve, progress }) {
 }
 
 export default function TrackingMap({ operation }) {
-  const { L } = useI18n()
+  const { L, t } = useI18n()
+  const [map, setMap] = useState(null)
+  const [active, setActive] = useState(false)
   const curve = useMemo(() => buildCurve(operation.origin, operation.destination), [operation])
+
+  // Mapa bloqueado hasta hacer clic (no se roba el scroll de la página).
+  useEffect(() => {
+    if (!map) return
+    const parts = ['dragging', 'scrollWheelZoom', 'doubleClickZoom', 'touchZoom', 'boxZoom', 'keyboard']
+    parts.forEach((p) => {
+      if (map[p]) active ? map[p].enable() : map[p].disable()
+    })
+    if (map.tap) active ? map.tap.enable() : map.tap.disable()
+  }, [map, active])
   const progress = Math.min(
     1,
     operation.completedMilestones.length / milestoneSteps.length,
@@ -72,8 +84,14 @@ export default function TrackingMap({ operation }) {
   ]
 
   return (
-    <div className="track-map panel">
+    <div className="track-map panel" onMouseLeave={() => setActive(false)}>
+      {!active && (
+        <button type="button" className="map-gate" onClick={() => setActive(true)} aria-label={t('map.activate')}>
+          <span className="map-gate-pill">{t('map.activate')}</span>
+        </button>
+      )}
       <MapContainer
+        ref={setMap}
         bounds={bounds}
         boundsOptions={{ padding: [50, 50] }}
         scrollWheelZoom={false}
@@ -102,8 +120,14 @@ export default function TrackingMap({ operation }) {
       </MapContainer>
 
       <style>{`
-        .track-map{height:clamp(300px,45vh,420px);overflow:hidden;padding:0;}
+        .track-map{position:relative;isolation:isolate;height:clamp(300px,45vh,420px);overflow:hidden;padding:0;}
         .track-map .leaflet-container{border-radius:14px;}
+        .track-map .map-gate{position:absolute;inset:0;z-index:1200;display:flex;align-items:flex-end;
+          justify-content:center;padding-bottom:16px;background:transparent;border:0;cursor:pointer;}
+        .track-map .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(10,21,33,.82);
+          color:#fff;font-size:.82rem;font-weight:600;padding:.5rem .9rem;border-radius:999px;
+          box-shadow:0 4px 16px rgba(0,0,0,.35);transition:background .18s ease;}
+        .track-map .map-gate:hover .map-gate-pill{background:rgba(10,21,33,.94);}
       `}</style>
     </div>
   )

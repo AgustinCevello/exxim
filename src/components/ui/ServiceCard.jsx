@@ -33,9 +33,7 @@ export default function ServiceCard({ service, variant = 'compact' }) {
       )}
 
       <style>{`
-        .svc-card{padding:1.75rem;display:flex;flex-direction:column;height:100%;
-          transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;}
-        .svc-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--color-accent-300);}
+        .svc-card{padding:1.75rem;display:flex;flex-direction:column;height:100%;}
         .svc-card--full{padding:2rem;scroll-margin-top:96px;}
         .svc-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.1rem;}
         .svc-icon{

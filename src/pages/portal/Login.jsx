@@ -6,7 +6,6 @@ import MaritimeBackdrop from '../../components/ui/MaritimeBackdrop'
 import SettingsMenu from '../../components/ui/SettingsMenu'
 import { useAuth } from '../../context/AuthContext'
 import { useI18n } from '../../i18n/I18nContext'
-import { demoCredentials } from '../../data/portal'
 
 function MicrosoftLogo() {
   return (
@@ -113,20 +112,6 @@ export default function Login() {
               {t('login.submit')}
               <Icon name="arrow-right" size={16} />
             </button>
-
-            <div className="demo-box">
-              <p className="demo-title">
-                <Icon name="life-buoy" size={15} /> {t('login.demoTitle')}
-              </p>
-              <div className="demo-row">
-                <span className="t-muted">{t('login.demoUser')}</span>
-                <code>{demoCredentials.user}</code>
-              </div>
-              <div className="demo-row">
-                <span className="t-muted">{t('login.demoPass')}</span>
-                <code>{demoCredentials.password}</code>
-              </div>
-            </div>
           </form>
         </div>
       </main>
@@ -162,14 +147,6 @@ export default function Login() {
         .input-icon .input{padding-left:2.3rem;}
         .login-error{display:flex;align-items:center;gap:.4rem;color:var(--color-signal-red);font-size:.88rem;
           margin-top:.9rem;background:rgba(210,84,75,.1);padding:.6rem .8rem;border-radius:8px;}
-        .demo-box{margin-top:1.5rem;padding:1rem 1.1rem;border:1px dashed var(--color-accent-300);
-          border-radius:11px;background:var(--accent-soft);}
-        .demo-title{display:flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:700;
-          letter-spacing:.04em;text-transform:uppercase;color:var(--color-accent-700);margin-bottom:.6rem;}
-        :root[data-theme='dark'] .demo-title{color:var(--color-accent-400);}
-        .demo-row{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;padding:.2rem 0;}
-        .demo-row code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;
-          color:var(--heading);background:var(--surface);padding:.15rem .5rem;border-radius:6px;border:1px solid var(--border);}
         @media (min-width:900px){
           .login-wrap{grid-template-columns:1.05fr 1fr;}
           .login-brand{display:block;}

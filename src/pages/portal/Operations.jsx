@@ -143,7 +143,13 @@ export default function Operations() {
       <style>{`
         .page-intro{margin-bottom:1.5rem;}
         .page-title{font-size:1.7rem;margin-bottom:.3rem;}
-        .ops-summary{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
+        .ops-summary{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:1.5rem;}
+        .kpi-card{padding:.85rem .95rem;display:flex;align-items:center;gap:.7rem;}
+        .kpi-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
+          border-radius:10px;flex-shrink:0;}
+        .kpi-text{min-width:0;}
+        .kpi-value{font-family:var(--font-serif);font-size:1.35rem;font-weight:600;color:var(--heading);line-height:1;}
+        .kpi-label{font-size:.76rem;margin-top:.25rem;line-height:1.25;}
         .ops-filters{display:flex;flex-wrap:wrap;gap:.75rem;padding:.85rem;margin-bottom:1.25rem;}
         .filter-field{display:flex;align-items:center;gap:.5rem;background:var(--surface-2);
           border:1px solid var(--border);border-radius:9px;padding:.1rem .7rem;color:var(--text-muted);
@@ -187,6 +193,23 @@ export default function Operations() {
         .ops-card-foot{display:flex;align-items:center;justify-content:space-between;font-size:.82rem;}
         .ops-empty{text-align:center;padding:2.5rem 1rem;}
 
+        @media (max-width:560px){
+          .page-title{font-size:1.3rem;}
+          .page-intro{margin-bottom:1.1rem;}
+          .page-intro .t-muted{font-size:.85rem;}
+          .ops-summary{gap:.6rem;margin-bottom:1.1rem;}
+          .kpi-card{padding:.65rem .7rem;gap:.5rem;}
+          .kpi-icon{width:30px;height:30px;}
+          .kpi-value{font-size:1.1rem;}
+          .kpi-label{font-size:.66rem;margin-top:.15rem;}
+          .ops-filters{padding:.6rem;gap:.5rem;margin-bottom:1rem;}
+          .ops-cards{gap:.55rem;padding:.55rem;}
+          .ops-card{padding:.7rem .8rem;gap:.45rem;border-radius:10px;}
+          .ops-id{font-size:.8rem;}
+          .ops-card-route{font-size:.84rem;gap:.3rem;}
+          .ops-card-foot{font-size:.74rem;}
+          .ops-type{font-size:.74rem;padding:.2rem .45rem;}
+        }
         @media (min-width:560px){.ops-summary{grid-template-columns:repeat(4,1fr);}}
         @media (min-width:860px){
           .ops-table{display:table;}
@@ -206,16 +229,13 @@ function SummaryCard({ icon, value, label, tone }) {
   }
   const c = tones[tone] || tones.navy
   return (
-    <div className="panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '.9rem' }}>
-      <span style={{
-        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-        width: 44, height: 44, borderRadius: 11, background: c.bg, color: c.fg, flexShrink: 0,
-      }}>
-        <Icon name={icon} size={22} />
+    <div className="panel kpi-card">
+      <span className="kpi-icon" style={{ background: c.bg, color: c.fg }}>
+        <Icon name={icon} size={18} />
       </span>
-      <div>
-        <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', fontWeight: 600, color: 'var(--heading)', lineHeight: 1 }}>{value}</p>
-        <p className="t-muted" style={{ fontSize: '.82rem', marginTop: '.2rem' }}>{label}</p>
+      <div className="kpi-text">
+        <p className="kpi-value">{value}</p>
+        <p className="kpi-label t-muted">{label}</p>
       </div>
     </div>
   )

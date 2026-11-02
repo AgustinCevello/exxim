@@ -30,11 +30,11 @@ export default function ClientsStrip() {
 
       <style>{`
         .clients-grid{
-          display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:2.75rem;
-          max-width:720px;margin-inline:auto;
+          display:grid;grid-template-columns:1fr;gap:1.5rem;margin-top:2.75rem;
+          max-width:820px;margin-inline:auto;
         }
         .clients-note{text-align:center;font-size:.82rem;margin-top:1.75rem;}
-        @media (min-width:560px){.clients-grid{grid-template-columns:1fr 1fr;}}
+        @media (min-width:600px){.clients-grid{grid-template-columns:1fr 1fr;}}
       `}</style>
     </section>
   )

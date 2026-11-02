@@ -1,4 +1,3 @@
-import Icon from '../ui/Icon'
 import Reveal from '../ui/Reveal'
 import SectionHeading from '../ui/SectionHeading'
 import CorrespondentMap from '../ui/CorrespondentMap'
@@ -31,9 +30,15 @@ export default function InternationalSection() {
             <ul className="intl-sec-list">
               {list.map((c) => (
                 <li key={c.code} className={`intl-sec-item ${c.home ? 'is-home' : ''}`}>
-                  <span className="intl-sec-flag">
-                    <Icon name={c.home ? 'map-pin' : 'globe'} size={17} />
-                  </span>
+                  <img
+                    className="intl-sec-flag"
+                    src={`https://flagcdn.com/w80/${c.code.toLowerCase()}.png`}
+                    srcSet={`https://flagcdn.com/w160/${c.code.toLowerCase()}.png 2x`}
+                    alt={L(c.name)}
+                    width="46"
+                    height="31"
+                    loading="lazy"
+                  />
                   <div>
                     <p className="intl-sec-name">{L(c.name)}</p>
                     <p className="intl-sec-role">{L(c.role)}</p>
@@ -47,13 +52,12 @@ export default function InternationalSection() {
 
       <style>{`
         .intl-sec-layout{display:grid;grid-template-columns:1fr;gap:2.25rem;margin-top:3rem;align-items:start;}
-        .intl-sec-list{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.75rem;}
-        .intl-sec-item{display:flex;gap:.8rem;align-items:center;padding:.85rem 1rem;
+        .intl-sec-list{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.7rem;}
+        .intl-sec-item{display:flex;gap:.9rem;align-items:center;padding:.8rem 1rem;
           border:1px solid var(--border);border-radius:11px;background:var(--surface);}
         .intl-sec-item.is-home{border-color:var(--color-accent-300);background:var(--accent-soft);}
-        .intl-sec-flag{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
-          border-radius:9px;background:var(--color-navy-900);color:#fff;flex-shrink:0;}
-        .intl-sec-item.is-home .intl-sec-flag{background:var(--color-accent-500);}
+        .intl-sec-flag{width:46px;height:31px;border-radius:5px;object-fit:cover;flex-shrink:0;
+          box-shadow:0 1px 4px rgba(16,32,48,.22);border:1px solid rgba(16,32,48,.12);}
         .intl-sec-name{font-weight:600;color:var(--heading);font-size:.96rem;}
         .intl-sec-role{font-size:.8rem;font-weight:600;color:var(--accent);margin-top:.1rem;}
         @media (min-width:900px){

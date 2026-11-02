@@ -38,12 +38,6 @@ export default function PortalLayout() {
 
   return (
     <div className="portal">
-      {/* Banner de prototipo */}
-      <div className="proto-banner">
-        <Icon name="bell" size={15} />
-        <span>{t('portal.banner')}</span>
-      </div>
-
       <div className="portal-body">
         {/* Sidebar */}
         <aside className={`portal-side ${drawer ? 'is-open' : ''}`}>
@@ -116,9 +110,6 @@ export default function PortalLayout() {
 
       <style>{`
         .portal{min-height:100vh;display:flex;flex-direction:column;background:var(--page-alt);width:100%;}
-        .proto-banner{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:center;
-          gap:.5rem;padding:.5rem 1rem;font-size:.82rem;font-weight:600;text-align:center;
-          background:linear-gradient(90deg,var(--color-accent-600),var(--color-accent-500));color:#fff;}
         .portal-body{flex:1;display:flex;position:relative;}
 
         .portal-side{
@@ -150,7 +141,7 @@ export default function PortalLayout() {
         .portal-scrim{position:fixed;inset:0;background:rgba(10,21,33,.5);z-index:55;}
 
         .portal-main{flex:1;min-width:0;display:flex;flex-direction:column;}
-        .portal-topbar{position:sticky;top:33px;z-index:35;display:flex;align-items:center;gap:1rem;
+        .portal-topbar{position:sticky;top:0;z-index:35;display:flex;align-items:center;gap:1rem;
           padding:.85rem 1.25rem;background:var(--surface);border-bottom:1px solid var(--border);}
         .portal-burger{display:inline-flex;background:none;border:0;color:var(--heading);cursor:pointer;}
         .portal-back{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;

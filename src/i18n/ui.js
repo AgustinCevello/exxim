@@ -12,6 +12,8 @@ export const translations = {
     'cta.contact': 'Contacto',
     'cta.allServices': 'Ver todos los servicios',
     'cta.viewService': 'Ver servicio',
+    'cta.whatsapp': 'Escribinos por WhatsApp',
+    'map.activate': 'Hacé clic para mover el mapa',
     'common.backHome': 'Volver al inicio',
 
     // Settings
@@ -293,6 +295,8 @@ export const translations = {
     'cta.contact': 'Contact',
     'cta.allServices': 'View all services',
     'cta.viewService': 'View service',
+    'cta.whatsapp': 'Chat with us on WhatsApp',
+    'map.activate': 'Click to interact with the map',
     'common.backHome': 'Back to home',
 
     // Settings

@@ -90,15 +90,16 @@ export default function Account() {
       <style>{`
         .page-intro{margin-bottom:1.5rem;}
         .page-title{font-size:1.7rem;margin-bottom:.3rem;}
-        .acc-cards{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;}
-        .acc-card{padding:1.25rem;display:flex;gap:.85rem;align-items:center;}
-        .acc-card-icon{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;
+        .acc-cards{display:grid;grid-template-columns:1fr;gap:1rem;margin-bottom:1.5rem;}
+        .acc-card{padding:1.1rem 1.2rem;display:flex;gap:.8rem;align-items:center;min-width:0;}
+        .acc-card>div{min-width:0;}
+        .acc-card-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
           border-radius:11px;flex-shrink:0;}
         .acc-green{background:rgba(46,158,107,.14);color:#1f7d52;}
         .acc-amber{background:rgba(224,163,58,.16);color:#9a6b12;}
-        .acc-card-label{font-size:.8rem;}
-        .acc-card-value{font-family:var(--font-serif);font-size:1.3rem;font-weight:600;color:var(--heading);
-          margin-top:.15rem;font-variant-numeric:tabular-nums;}
+        .acc-card-label{font-size:.78rem;}
+        .acc-card-value{font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--heading);
+          margin-top:.15rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;}
 
         .acc-chart-card{padding:1.5rem;}
         .acc-chart-head{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:flex-start;margin-bottom:1.75rem;}
@@ -129,7 +130,14 @@ export default function Account() {
         .acc-table td{padding:.65rem .75rem;border-bottom:1px solid var(--border-soft);color:var(--text);}
         .acc-table tbody tr:last-child td{border-bottom:0;}
 
-        @media (min-width:640px){.acc-cards{grid-template-columns:repeat(4,1fr);}}
+        @media (max-width:560px){
+          .page-title{font-size:1.3rem;}
+          .acc-chart-card{padding:1.1rem;}
+          .acc-chart{height:170px;gap:.3rem;}
+          .acc-col-label{font-size:.72rem;}
+        }
+        @media (min-width:520px){.acc-cards{grid-template-columns:1fr 1fr;}}
+        @media (min-width:860px){.acc-cards{grid-template-columns:repeat(4,1fr);}}
       `}</style>
     </div>
   )

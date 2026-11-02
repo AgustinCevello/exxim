@@ -13,7 +13,7 @@ export const demoClient = {
 
 export const demoCredentials = {
   user: 'admin',
-  password: 'viruela83',
+  password: 'uade92',
 }
 
 /* Estados posibles: etiqueta bilingüe + color de señal */

@@ -1,10 +1,10 @@
 import { Wordmark } from '../ui/Logo'
 import Icon from '../ui/Icon'
-import { company, navLinks, services } from '../../data/site'
+import { company } from '../../data/site'
 import { useI18n } from '../../i18n/I18nContext'
 
 export default function Footer() {
-  const { t, L } = useI18n()
+  const { t } = useI18n()
   const year = new Date().getFullYear()
 
   return (
@@ -25,35 +25,6 @@ export default function Footer() {
               {t('cta.quote')}
               <Icon name="arrow-right" size={16} />
             </a>
-          </div>
-
-          {/* Navegación */}
-          <div>
-            <h4 className="footer-title">{t('footer.nav')}</h4>
-            <ul className="footer-list">
-              <li><a href="#top" className="footer-link">{t('nav.home')}</a></li>
-              {navLinks.map((l) => (
-                <li key={l.id}>
-                  <a href={`#${l.id}`} className="footer-link">
-                    {t(l.key)}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Servicios */}
-          <div>
-            <h4 className="footer-title">{t('footer.services')}</h4>
-            <ul className="footer-list">
-              {services.map((s) => (
-                <li key={s.slug}>
-                  <a href="#servicios" className="footer-link">
-                    {L(s.title)}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Contacto */}
@@ -106,11 +77,8 @@ export default function Footer() {
           display:flex;flex-direction:column;gap:.4rem;padding-top:1.5rem;
           font-size:.85rem;color:rgba(205,216,227,.62);
         }
-        @media (min-width:640px){
-          .footer-grid{grid-template-columns:1.4fr 1fr 1fr;}
-        }
-        @media (min-width:960px){
-          .footer-grid{grid-template-columns:2fr 1fr 1fr 1.3fr;}
+        @media (min-width:700px){
+          .footer-grid{grid-template-columns:1.6fr 1fr;align-items:start;}
           .footer-bottom{flex-direction:row;justify-content:space-between;align-items:center;}
         }
       `}</style>
