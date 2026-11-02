@@ -138,10 +138,6 @@ export default function Login() {
         .login-divider{display:flex;align-items:center;gap:.9rem;margin:1.25rem 0;color:var(--text-muted);font-size:.82rem;}
         .login-divider::before,.login-divider::after{content:'';flex:1;height:1px;background:var(--border);}
         .field label{display:block;font-size:.85rem;font-weight:600;color:var(--heading);margin-bottom:.4rem;}
-        .input{width:100%;padding:.75rem .85rem;border:1px solid var(--border);border-radius:9px;
-          background:var(--surface-2);color:var(--heading);font-size:.95rem;font-family:inherit;}
-        .input:focus{outline:none;border-color:var(--color-accent-500);
-          box-shadow:0 0 0 3px rgba(232,116,42,.16);background:var(--surface);}
         .input-icon{position:relative;}
         .input-icon svg{position:absolute;left:.8rem;top:50%;transform:translateY(-50%);color:var(--text-muted);}
         .input-icon .input{padding-left:2.3rem;}

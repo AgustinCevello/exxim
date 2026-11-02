@@ -13,6 +13,7 @@ export const company = {
   whatsappHref: 'https://wa.me/5491161555520',
   phone: '+54 9 11 6155-5520',
   phoneHref: 'tel:+5491161555520',
+  linkedin: 'https://www.linkedin.com/company/exxim-alliance-srl/about/',
   coords: { lat: -34.609, lng: -58.3845 },
 }
 

@@ -212,6 +212,15 @@ const paths = {
       <path d="m12 20 3.5-8 3.5 8M13.2 17h4.6" />
     </>
   ),
+  linkedin: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="2.5" />
+      <path d="M7.5 10.5V17" />
+      <circle cx="7.5" cy="7.3" r="0.65" fill="currentColor" stroke="none" />
+      <path d="M11 17v-3.6a2.3 2.3 0 0 1 4.6 0V17" />
+      <path d="M11 17v-6.5" />
+    </>
+  ),
 }
 
 export default function Icon({ name, size = 22, className = '', strokeWidth = 1.6, ...rest }) {

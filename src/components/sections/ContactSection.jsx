@@ -133,6 +133,9 @@ export default function ContactSection() {
               <InfoItem icon="phone" label={t('contact.phoneLabel')}>
                 <a href={company.phoneHref} className="contact-info-link">{company.phone}</a>
               </InfoItem>
+              <InfoItem icon="linkedin" label="LinkedIn">
+                <a href={company.linkedin} target="_blank" rel="noreferrer" className="contact-info-link">{company.name}</a>
+              </InfoItem>
               <InfoItem icon="clock" label={t('contact.hours')}>{t('contact.hoursValue')}</InfoItem>
             </ul>
             <div style={{ marginTop: '1.5rem' }}>
@@ -146,7 +149,7 @@ export default function ContactSection() {
         .contact-layout{display:grid;grid-template-columns:1fr;gap:2.25rem;align-items:start;margin-top:3rem;}
         .contact-form-col{padding:2rem;}
         .contact-form-title{font-size:1.3rem;margin-bottom:1.5rem;}
-        .field-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
+        .field-grid{display:grid;grid-template-columns:1fr;gap:1.1rem 1.25rem;}
         .field label{display:block;font-size:.85rem;font-weight:600;color:var(--heading);margin-bottom:.4rem;}
         .field .req{color:var(--color-signal-red);margin-left:.15rem;}
         textarea.input{resize:vertical;min-height:120px;}
@@ -161,6 +164,11 @@ export default function ContactSection() {
         .contact-info-value{color:var(--heading);font-size:.98rem;margin-top:.15rem;}
         .contact-info-link{color:var(--accent);font-weight:500;}
         .contact-info-link:hover{text-decoration:underline;}
+        .contact-form-col .btn-primary{gap:.5rem;}
+        @media (max-width:560px){
+          .contact-form-col{padding:1.4rem;}
+          .contact-form-col .btn-primary{width:100%;justify-content:center;}
+        }
         @media (min-width:560px){.field-grid{grid-template-columns:1fr 1fr;}}
         @media (min-width:900px){.contact-layout{grid-template-columns:1.3fr 1fr;gap:3rem;}}
       `}</style>
