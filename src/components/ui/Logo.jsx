@@ -14,7 +14,7 @@ export function BrandMark({ className = '', height = 34 }) {
 }
 
 /* Wordmark de texto (para fondos oscuros, siempre legible).
-   Reproduce la identidad: "e" y "m" en violeta; "xxi" en claro/carbón. */
+   Reproduce la identidad: "xx" en violeta; "e", "i" y "m" en claro/carbón. */
 export function Wordmark({ dark = false, className = '', size = '1.5rem' }) {
   // dark = fondo siempre oscuro (footer, panel navy). Si no, usa el color
   // de encabezado, que se adapta a los temas claro/oscuro.
@@ -33,9 +33,9 @@ export function Wordmark({ dark = false, className = '', size = '1.5rem' }) {
       }}
       aria-label="Exxim Alliance"
     >
-      <span style={{ color: 'var(--color-accent-500)' }}>e</span>
-      <span style={{ color: mid }}>xxi</span>
-      <span style={{ color: 'var(--color-accent-500)' }}>m</span>
+      <span style={{ color: mid }}>e</span>
+      <span style={{ color: 'var(--color-accent-500)' }}>xx</span>
+      <span style={{ color: mid }}>im</span>
     </span>
   )
 }
