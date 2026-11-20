@@ -53,7 +53,7 @@ export default function CorrespondentMap() {
                 [home.coords.lat, home.coords.lng],
                 [c.coords.lat, c.coords.lng],
               ]}
-              pathOptions={{ color: '#e8742a', weight: 1.5, opacity: 0.55, dashArray: '4 6' }}
+              pathOptions={{ color: '#7c4dff', weight: 1.5, opacity: 0.55, dashArray: '4 6' }}
             />
           ))}
 
@@ -83,7 +83,7 @@ export default function CorrespondentMap() {
           <CircleMarker
             center={[home.coords.lat, home.coords.lng]}
             radius={10}
-            pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#e8742a', fillOpacity: 1 }}
+            pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#7c4dff', fillOpacity: 1 }}
           >
             <Tooltip direction="top" offset={[0, -6]} permanent>
               {L(home.name)}

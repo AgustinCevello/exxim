@@ -14,7 +14,7 @@ export function BrandMark({ className = '', height = 34 }) {
 }
 
 /* Wordmark de texto (para fondos oscuros, siempre legible).
-   Reproduce la identidad: "e" y "m" en naranja; "xxi" en claro/carbón. */
+   Reproduce la identidad: "e" y "m" en violeta; "xxi" en claro/carbón. */
 export function Wordmark({ dark = false, className = '', size = '1.5rem' }) {
   // dark = fondo siempre oscuro (footer, panel navy). Si no, usa el color
   // de encabezado, que se adapta a los temas claro/oscuro.

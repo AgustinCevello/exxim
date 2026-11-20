@@ -50,7 +50,7 @@ export default function CostBreakdown({ operation }) {
           flex-wrap:wrap;margin-bottom:.5rem;}
         .cost-tag{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
           padding:.28rem .6rem;border-radius:7px;}
-        .cost-tag--honorarios{background:rgba(232,116,42,.14);color:var(--color-accent-700);}
+        .cost-tag--honorarios{background:rgba(124,77,255,.14);color:var(--color-accent-700);}
         .cost-tag--tributos{background:rgba(43,83,125,.12);color:var(--color-navy-600);}
         .cost-tag--terceros{background:var(--surface-2);color:var(--text-muted);border:1px solid var(--border);}
         :root[data-theme='dark'] .cost-tag--honorarios{color:var(--color-accent-400);}

@@ -41,7 +41,7 @@ export default function LocationMap() {
         <CircleMarker
           center={[lat, lng]}
           radius={11}
-          pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#e8742a', fillOpacity: 1 }}
+          pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#7c4dff', fillOpacity: 1 }}
         >
           <Popup>
             <strong>{company.name}</strong>

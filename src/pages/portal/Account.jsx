@@ -42,7 +42,7 @@ export default function Account() {
             <p className="t-muted" style={{ fontSize: '.84rem', marginTop: '.15rem' }}>{t('acc.chartHint')}</p>
           </div>
           <div className="acc-legend">
-            <span className="acc-leg"><span className="acc-leg-dot" style={{ background: '#e8742a' }} />{t('acc.legend.honorarios')}</span>
+            <span className="acc-leg"><span className="acc-leg-dot" style={{ background: '#7c4dff' }} />{t('acc.legend.honorarios')}</span>
             <span className="acc-leg"><span className="acc-leg-dot" style={{ background: '#1d3f63' }} />{t('acc.legend.tributos')}</span>
           </div>
         </header>
@@ -113,7 +113,7 @@ export default function Account() {
         .acc-bars{display:flex;gap:4px;align-items:flex-end;height:100%;width:100%;justify-content:center;}
         .acc-bar{width:36%;max-width:26px;border-radius:5px 5px 0 0;position:relative;min-height:4px;
           transition:filter .15s ease;}
-        .acc-bar-h{background:linear-gradient(180deg,#ef8f4e,#e8742a);}
+        .acc-bar-h{background:linear-gradient(180deg,#9d7bff,#7c4dff);}
         .acc-bar-t{background:linear-gradient(180deg,#2b537d,#1d3f63);}
         .acc-bar:hover{filter:brightness(1.08);}
         .acc-bar-tip{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);margin-bottom:6px;

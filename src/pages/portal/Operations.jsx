@@ -155,7 +155,7 @@ export default function Operations() {
           border:1px solid var(--border);border-radius:9px;padding:.1rem .7rem;color:var(--text-muted);
           transition:border-color .16s ease, box-shadow .16s ease;}
         .filter-field:focus-within{border-color:var(--color-accent-500);
-          box-shadow:0 0 0 3px rgba(232,116,42,.14);}
+          box-shadow:0 0 0 3px rgba(124,77,255,.14);}
         .filter-field select,.filter-field input{border:0;background:transparent;color:var(--heading);
           font-size:.9rem;font-family:inherit;padding:.55rem 0;outline:none;min-width:0;}
         .filter-field select{appearance:none;-webkit-appearance:none;cursor:pointer;
@@ -176,7 +176,7 @@ export default function Operations() {
         .ops-id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;color:var(--heading);font-size:.88rem;}
         .ops-type{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:600;padding:.25rem .55rem;border-radius:7px;}
         .ops-type--import{background:rgba(43,83,125,.12);color:var(--color-navy-600);}
-        .ops-type--export{background:rgba(232,116,42,.12);color:var(--color-accent-700);}
+        .ops-type--export{background:rgba(124,77,255,.12);color:var(--color-accent-700);}
         :root[data-theme='dark'] .ops-type--import{color:#7ba0c7;}
         :root[data-theme='dark'] .ops-type--export{color:var(--color-accent-400);}
         .ops-route{color:var(--text);}

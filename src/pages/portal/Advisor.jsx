@@ -104,7 +104,7 @@ export default function Advisor() {
         .adv-textarea{width:100%;padding:.85rem;border:1px solid var(--border);border-radius:11px;
           background:var(--surface-2);color:var(--heading);font-family:inherit;font-size:.95rem;resize:vertical;}
         .adv-textarea:focus{outline:none;border-color:var(--color-accent-500);
-          box-shadow:0 0 0 3px rgba(232,116,42,.16);background:var(--surface);}
+          box-shadow:0 0 0 3px rgba(124,77,255,.16);background:var(--surface);}
         .adv-sent{display:flex;align-items:center;gap:.4rem;margin-top:1rem;color:var(--color-signal-green);
           font-size:.9rem;font-weight:500;background:rgba(46,158,107,.12);padding:.6rem .8rem;border-radius:9px;}
 

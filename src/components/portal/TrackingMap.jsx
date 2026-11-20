@@ -50,8 +50,8 @@ function MovingMarker({ curve, progress }) {
   if (!pos) return null
   return (
     <>
-      <CircleMarker center={pos} radius={10} pathOptions={{ color: '#e8742a', weight: 3, fillColor: '#e8742a', fillOpacity: 0.25 }} />
-      <CircleMarker center={pos} radius={5} pathOptions={{ color: '#fff', weight: 2, fillColor: '#e8742a', fillOpacity: 1 }} />
+      <CircleMarker center={pos} radius={10} pathOptions={{ color: '#7c4dff', weight: 3, fillColor: '#7c4dff', fillOpacity: 0.25 }} />
+      <CircleMarker center={pos} radius={5} pathOptions={{ color: '#fff', weight: 2, fillColor: '#7c4dff', fillOpacity: 1 }} />
     </>
   )
 }
@@ -103,7 +103,7 @@ export default function TrackingMap({ operation }) {
         {/* Ruta completa punteada */}
         <Polyline positions={curve} pathOptions={{ color: '#5a6b7b', weight: 2, opacity: 0.5, dashArray: '3 7' }} />
         {/* Tramo recorrido */}
-        <Polyline positions={traveled} pathOptions={{ color: '#e8742a', weight: 3.5, opacity: 0.95 }} />
+        <Polyline positions={traveled} pathOptions={{ color: '#7c4dff', weight: 3.5, opacity: 0.95 }} />
 
         {/* Origen */}
         <CircleMarker center={[operation.origin.lat, operation.origin.lng]} radius={7}

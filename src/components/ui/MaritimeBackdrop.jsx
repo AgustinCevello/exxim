@@ -17,7 +17,7 @@ export default function MaritimeBackdrop({ className = '', opacity = 0.5 }) {
         </radialGradient>
         <linearGradient id="mb-line" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#3f6a97" stopOpacity="0" />
-          <stop offset="50%" stopColor="#ef8f4e" stopOpacity="0.7" />
+          <stop offset="50%" stopColor="#9d7bff" stopOpacity="0.7" />
           <stop offset="100%" stopColor="#3f6a97" stopOpacity="0" />
         </linearGradient>
       </defs>
@@ -51,8 +51,8 @@ export default function MaritimeBackdrop({ className = '', opacity = 0.5 }) {
           [160, 500],
         ].map(([cx, cy], i) => (
           <g key={i}>
-            <circle cx={cx} cy={cy} r="9" fill="#ef8f4e" fillOpacity="0.14" />
-            <circle cx={cx} cy={cy} r="3.5" fill="#ef8f4e" />
+            <circle cx={cx} cy={cy} r="9" fill="#9d7bff" fillOpacity="0.14" />
+            <circle cx={cx} cy={cy} r="3.5" fill="#9d7bff" />
           </g>
         ))}
       </g>
