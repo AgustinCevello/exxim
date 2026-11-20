@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import Reveal from '../ui/Reveal'
+import GlowBackdrop from '../ui/GlowBackdrop'
 import SectionHeading from '../ui/SectionHeading'
 import Icon from '../ui/Icon'
 import LocationMap from '../ui/LocationMap'
@@ -58,7 +59,8 @@ export default function ContactSection() {
   }
 
   return (
-    <section className="section surface-alt">
+    <section className="section surface-alt fx-host">
+      <GlowBackdrop variant="soft" />
       <div className="container-x">
         <SectionHeading
           eyebrow={t('contact.badge')}

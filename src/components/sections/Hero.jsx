@@ -1,5 +1,6 @@
 import Icon from '../ui/Icon'
 import MaritimeBackdrop from '../ui/MaritimeBackdrop'
+import GlowBackdrop from '../ui/GlowBackdrop'
 import { media } from '../../data/site'
 import { useI18n } from '../../i18n/I18nContext'
 
@@ -8,9 +9,10 @@ export default function Hero() {
 
   return (
     <section className="hero" id="top">
-      {/* Capas de fondo: color base + foto + degradado + motivo marítimo */}
+      {/* Capas de fondo: color base + foto + degradado + luces con grano + motivo marítimo */}
       <div className="hero-photo" style={{ backgroundImage: `url(${media.heroPort})` }} />
       <div className="hero-overlay" />
+      <GlowBackdrop variant="hero" />
       <MaritimeBackdrop opacity={0.6} />
 
       <div className="container-x hero-inner">

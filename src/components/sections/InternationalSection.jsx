@@ -1,4 +1,5 @@
 import Reveal from '../ui/Reveal'
+import GlowBackdrop from '../ui/GlowBackdrop'
 import SectionHeading from '../ui/SectionHeading'
 import CorrespondentMap from '../ui/CorrespondentMap'
 import { countries } from '../../data/site'
@@ -10,7 +11,8 @@ export default function InternationalSection() {
   const list = [...countries].sort((a) => (a.home ? -1 : 1))
 
   return (
-    <section className="section surface-alt">
+    <section className="section surface-alt fx-host">
+      <GlowBackdrop variant="soft" />
       <div className="container-x">
         <SectionHeading
           eyebrow={t('intl.badge')}

@@ -1,4 +1,5 @@
 import Reveal from '../ui/Reveal'
+import GlowBackdrop from '../ui/GlowBackdrop'
 import SectionHeading from '../ui/SectionHeading'
 import ServiceCard from '../ui/ServiceCard'
 import { services } from '../../data/site'
@@ -7,7 +8,8 @@ import { useI18n } from '../../i18n/I18nContext'
 export default function ServicesPreview() {
   const { t } = useI18n()
   return (
-    <section className="section surface-alt">
+    <section className="section surface-alt fx-host">
+      <GlowBackdrop variant="soft" />
       <div className="container-x">
         <SectionHeading
           eyebrow={t('services.eyebrow')}

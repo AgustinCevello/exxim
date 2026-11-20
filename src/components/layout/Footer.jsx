@@ -1,5 +1,6 @@
 import { Wordmark } from '../ui/Logo'
 import Icon from '../ui/Icon'
+import GlowBackdrop from '../ui/GlowBackdrop'
 import { company } from '../../data/site'
 import { useI18n } from '../../i18n/I18nContext'
 
@@ -8,7 +9,8 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer style={{ background: 'var(--color-navy-950)', color: '#cdd8e3' }}>
+    <footer className="fx-host" style={{ background: 'var(--color-navy-950)', color: '#cdd8e3' }}>
+      <GlowBackdrop variant="footer" />
       <div className="container-x" style={{ paddingBlock: '3.75rem 1.5rem' }}>
         <div className="footer-grid">
           {/* Marca */}

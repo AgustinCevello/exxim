@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import Icon from '../../components/ui/Icon'
 import { Wordmark } from '../../components/ui/Logo'
 import MaritimeBackdrop from '../../components/ui/MaritimeBackdrop'
+import GlowBackdrop from '../../components/ui/GlowBackdrop'
 import SettingsMenu from '../../components/ui/SettingsMenu'
 import { useAuth } from '../../context/AuthContext'
 import { useI18n } from '../../i18n/I18nContext'
@@ -39,6 +40,7 @@ export default function Login() {
     <div className="login-wrap">
       {/* Panel de marca */}
       <aside className="login-brand">
+        <GlowBackdrop variant="hero" />
         <MaritimeBackdrop opacity={0.6} />
         <div className="login-brand-inner">
           <Link to="/" aria-label="Exxim Alliance">
