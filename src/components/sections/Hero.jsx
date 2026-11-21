@@ -52,8 +52,8 @@ export default function Hero() {
         .hero-overlay{
           position:absolute;inset:0;
           background:
-            linear-gradient(104deg, rgba(10,21,33,.96) 0%, rgba(15,36,59,.86) 45%, rgba(15,36,59,.45) 100%),
-            linear-gradient(0deg, rgba(10,21,33,.9) 0%, rgba(10,21,33,0) 40%);
+            linear-gradient(104deg, rgba(18,9,4,.96) 0%, rgba(31,17,9,.86) 45%, rgba(31,17,9,.45) 100%),
+            linear-gradient(0deg, rgba(18,9,4,.9) 0%, rgba(18,9,4,0) 40%);
         }
         .hero-inner{position:relative;z-index:2;width:100%;}
         .hero-content{max-width:640px;}
@@ -64,7 +64,7 @@ export default function Hero() {
         }
         .hero-subtitle{
           margin-top:1.4rem;font-size:clamp(1.02rem,1.6vw,1.2rem);line-height:1.6;
-          color:rgba(226,235,243,.86);max-width:36rem;
+          color:rgba(246,236,228,.86);max-width:36rem;
         }
         .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem;}
         .hero-stats{
@@ -76,7 +76,7 @@ export default function Hero() {
         .hero-stat-value{
           font-family:var(--font-serif);font-size:1.9rem;font-weight:600;color:#fff;line-height:1;
         }
-        .hero-stat-label{font-size:.82rem;color:rgba(226,235,243,.72);max-width:11rem;line-height:1.35;}
+        .hero-stat-label{font-size:.82rem;color:rgba(246,236,228,.72);max-width:11rem;line-height:1.35;}
         @media (max-width:520px){
           .hero-stat-div{display:none;}
           .hero-stats{gap:1.1rem 1.6rem;}

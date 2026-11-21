@@ -65,7 +65,7 @@ export default function Timeline({ operation }) {
         .tl-done .tl-marker > :first-child{background:var(--color-signal-green);color:#fff;}
         .tl-done .tl-line{background:var(--color-signal-green);opacity:.5;}
         .tl-current .tl-marker > :first-child{background:var(--color-accent-500);color:#fff;
-          box-shadow:0 0 0 4px rgba(124,77,255,.2);}
+          box-shadow:0 0 0 4px rgba(255,122,41,.2);}
         .tl-pending .tl-marker > :first-child{background:var(--surface-2);border:1px solid var(--border);}
         .tl-pending .tl-label{color:var(--text-muted);font-weight:500;}
 

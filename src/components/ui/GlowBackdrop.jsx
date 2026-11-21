@@ -1,4 +1,4 @@
-/* Fondo con luces difusas violeta/fucsia y textura de grano.
+/* Fondo con luces difusas naranja/ámbar y textura de grano.
    Variantes: hero (oscuro, intenso), cta (como la tarjeta "grano"),
    footer (luz que sube desde abajo) y soft (secciones claras, sutil).
    El contenedor padre necesita la clase .fx-host. */

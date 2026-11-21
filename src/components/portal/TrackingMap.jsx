@@ -50,8 +50,8 @@ function MovingMarker({ curve, progress }) {
   if (!pos) return null
   return (
     <>
-      <CircleMarker center={pos} radius={10} pathOptions={{ color: '#7c4dff', weight: 3, fillColor: '#7c4dff', fillOpacity: 0.25 }} />
-      <CircleMarker center={pos} radius={5} pathOptions={{ color: '#fff', weight: 2, fillColor: '#7c4dff', fillOpacity: 1 }} />
+      <CircleMarker center={pos} radius={10} pathOptions={{ color: '#ff7a29', weight: 3, fillColor: '#ff7a29', fillOpacity: 0.25 }} />
+      <CircleMarker center={pos} radius={5} pathOptions={{ color: '#fff', weight: 2, fillColor: '#ff7a29', fillOpacity: 1 }} />
     </>
   )
 }
@@ -101,13 +101,13 @@ export default function TrackingMap({ operation }) {
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; OpenStreetMap" />
 
         {/* Ruta completa punteada */}
-        <Polyline positions={curve} pathOptions={{ color: '#5a6b7b', weight: 2, opacity: 0.5, dashArray: '3 7' }} />
+        <Polyline positions={curve} pathOptions={{ color: '#7a6556', weight: 2, opacity: 0.5, dashArray: '3 7' }} />
         {/* Tramo recorrido */}
-        <Polyline positions={traveled} pathOptions={{ color: '#7c4dff', weight: 3.5, opacity: 0.95 }} />
+        <Polyline positions={traveled} pathOptions={{ color: '#ff7a29', weight: 3.5, opacity: 0.95 }} />
 
         {/* Origen */}
         <CircleMarker center={[operation.origin.lat, operation.origin.lng]} radius={7}
-          pathOptions={{ color: '#fff', weight: 2, fillColor: '#15304d', fillOpacity: 1 }}>
+          pathOptions={{ color: '#fff', weight: 2, fillColor: '#2b1810', fillOpacity: 1 }}>
           <Tooltip direction="top">{L(operation.originCity)}</Tooltip>
         </CircleMarker>
         {/* Destino */}
@@ -124,10 +124,10 @@ export default function TrackingMap({ operation }) {
         .track-map .leaflet-container{border-radius:14px;}
         .track-map .map-gate{position:absolute;inset:0;z-index:1200;display:flex;align-items:flex-end;
           justify-content:center;padding-bottom:16px;background:transparent;border:0;cursor:pointer;}
-        .track-map .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(10,21,33,.82);
+        .track-map .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(18,9,4,.82);
           color:#fff;font-size:.82rem;font-weight:600;padding:.5rem .9rem;border-radius:999px;
           box-shadow:0 4px 16px rgba(0,0,0,.35);transition:background .18s ease;}
-        .track-map .map-gate:hover .map-gate-pill{background:rgba(10,21,33,.94);}
+        .track-map .map-gate:hover .map-gate-pill{background:rgba(18,9,4,.94);}
       `}</style>
     </div>
   )

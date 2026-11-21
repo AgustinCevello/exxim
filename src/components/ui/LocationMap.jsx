@@ -41,7 +41,7 @@ export default function LocationMap() {
         <CircleMarker
           center={[lat, lng]}
           radius={11}
-          pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#7c4dff', fillOpacity: 1 }}
+          pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#ff7a29', fillOpacity: 1 }}
         >
           <Popup>
             <strong>{company.name}</strong>
@@ -56,10 +56,10 @@ export default function LocationMap() {
         .loc-map .leaflet-container{border-radius:14px;}
         .loc-map .map-gate{position:absolute;inset:0;z-index:1200;display:flex;align-items:flex-end;
           justify-content:center;padding-bottom:16px;background:transparent;border:0;cursor:pointer;}
-        .loc-map .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(10,21,33,.82);
+        .loc-map .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(18,9,4,.82);
           color:#fff;font-size:.82rem;font-weight:600;padding:.5rem .9rem;border-radius:999px;
           box-shadow:0 4px 16px rgba(0,0,0,.35);transition:background .18s ease;}
-        .loc-map .map-gate:hover .map-gate-pill{background:rgba(10,21,33,.94);}
+        .loc-map .map-gate:hover .map-gate-pill{background:rgba(18,9,4,.94);}
       `}</style>
     </div>
   )

@@ -53,7 +53,7 @@ export default function CorrespondentMap() {
                 [home.coords.lat, home.coords.lng],
                 [c.coords.lat, c.coords.lng],
               ]}
-              pathOptions={{ color: '#7c4dff', weight: 1.5, opacity: 0.55, dashArray: '4 6' }}
+              pathOptions={{ color: '#ff7a29', weight: 1.5, opacity: 0.55, dashArray: '4 6' }}
             />
           ))}
 
@@ -63,7 +63,7 @@ export default function CorrespondentMap() {
             key={c.code}
             center={[c.coords.lat, c.coords.lng]}
             radius={8}
-            pathOptions={{ color: '#15304d', weight: 2, fillColor: '#2b537d', fillOpacity: 0.9 }}
+            pathOptions={{ color: '#2b1810', weight: 2, fillColor: '#5c3820', fillOpacity: 0.9 }}
           >
             <Tooltip direction="top" offset={[0, -6]}>
               {L(c.name)}
@@ -71,7 +71,7 @@ export default function CorrespondentMap() {
             <Popup>
               <strong>{L(c.name)}</strong>
               <br />
-              <span style={{ color: '#5a6b7b' }}>{L(c.role)}</span>
+              <span style={{ color: '#7a6556' }}>{L(c.role)}</span>
               <br />
               {L(c.note)}
             </Popup>
@@ -83,7 +83,7 @@ export default function CorrespondentMap() {
           <CircleMarker
             center={[home.coords.lat, home.coords.lng]}
             radius={10}
-            pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#7c4dff', fillOpacity: 1 }}
+            pathOptions={{ color: '#fff', weight: 2.5, fillColor: '#ff7a29', fillOpacity: 1 }}
           >
             <Tooltip direction="top" offset={[0, -6]} permanent>
               {L(home.name)}
@@ -91,7 +91,7 @@ export default function CorrespondentMap() {
             <Popup>
               <strong>{L(home.name)}</strong>
               <br />
-              <span style={{ color: '#5a6b7b' }}>{L(home.role)}</span>
+              <span style={{ color: '#7a6556' }}>{L(home.role)}</span>
               <br />
               {L(home.note)}
             </Popup>
@@ -104,10 +104,10 @@ export default function CorrespondentMap() {
         .corr-map .leaflet-container{border-radius:14px;}
         .map-gate{position:absolute;inset:0;z-index:1200;display:flex;align-items:flex-end;
           justify-content:center;padding-bottom:16px;background:transparent;border:0;cursor:pointer;}
-        .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(10,21,33,.82);
+        .map-gate-pill{display:inline-flex;align-items:center;gap:.4rem;background:rgba(18,9,4,.82);
           color:#fff;font-size:.82rem;font-weight:600;padding:.5rem .9rem;border-radius:999px;
           box-shadow:0 4px 16px rgba(0,0,0,.35);transition:background .18s ease;}
-        .map-gate:hover .map-gate-pill{background:rgba(10,21,33,.94);}
+        .map-gate:hover .map-gate-pill{background:rgba(18,9,4,.94);}
       `}</style>
     </div>
   )

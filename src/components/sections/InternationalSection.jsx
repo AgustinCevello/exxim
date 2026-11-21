@@ -59,7 +59,7 @@ export default function InternationalSection() {
           border:1px solid var(--border);border-radius:11px;background:var(--surface);}
         .intl-sec-item.is-home{border-color:var(--color-accent-300);background:var(--accent-soft);}
         .intl-sec-flag{width:46px;height:31px;border-radius:5px;object-fit:cover;flex-shrink:0;
-          box-shadow:0 1px 4px rgba(16,32,48,.22);border:1px solid rgba(16,32,48,.12);}
+          box-shadow:0 1px 4px rgba(40,22,10,.22);border:1px solid rgba(40,22,10,.12);}
         .intl-sec-name{font-weight:600;color:var(--heading);font-size:.96rem;}
         .intl-sec-role{font-size:.8rem;font-weight:600;color:var(--accent);margin-top:.1rem;}
         @media (min-width:900px){

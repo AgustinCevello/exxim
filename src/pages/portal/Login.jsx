@@ -124,8 +124,8 @@ export default function Login() {
         .login-brand-inner{position:relative;z-index:2;height:100%;padding:3rem;display:flex;
           flex-direction:column;justify-content:space-between;gap:2rem;}
         .login-brand-title{color:#fff;font-size:2.4rem;margin-top:1rem;line-height:1.1;}
-        .login-brand-text{color:rgba(226,235,243,.82);margin-top:1rem;font-size:1.05rem;max-width:24rem;}
-        .login-back{display:inline-flex;align-items:center;gap:.45rem;color:rgba(226,235,243,.8);
+        .login-brand-text{color:rgba(246,236,228,.82);margin-top:1rem;font-size:1.05rem;max-width:24rem;}
+        .login-back{display:inline-flex;align-items:center;gap:.45rem;color:rgba(246,236,228,.8);
           font-size:.9rem;font-weight:500;}
         .login-back:hover{color:#fff;}
 

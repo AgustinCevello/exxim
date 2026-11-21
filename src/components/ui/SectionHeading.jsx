@@ -20,7 +20,7 @@ export default function SectionHeading({
       )}
       <h2
         className="mt-4 text-[1.9rem] sm:text-[2.35rem] leading-[1.12]"
-        style={{ color: light ? '#f4f7fa' : undefined }}
+        style={{ color: light ? '#fbf6f2' : undefined }}
       >
         {title}
       </h2>
@@ -28,7 +28,7 @@ export default function SectionHeading({
         <p
           className={`mt-4 text-[1.03rem] ${centered ? 'mx-auto' : ''}`}
           style={{
-            color: light ? 'rgba(226,235,243,0.82)' : 'var(--text-muted)',
+            color: light ? 'rgba(246,236,228,0.82)' : 'var(--text-muted)',
             maxWidth,
           }}
         >

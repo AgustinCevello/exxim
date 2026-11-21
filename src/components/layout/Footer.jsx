@@ -9,14 +9,14 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="fx-host" style={{ background: 'var(--color-navy-950)', color: '#cdd8e3' }}>
+    <footer className="fx-host" style={{ background: 'var(--color-navy-950)', color: '#e8dcd2' }}>
       <GlowBackdrop variant="footer" />
       <div className="container-x" style={{ paddingBlock: '3.75rem 1.5rem' }}>
         <div className="footer-grid">
           {/* Marca */}
           <div style={{ maxWidth: '22rem' }}>
             <Wordmark dark size="1.7rem" />
-            <p style={{ marginTop: '1rem', fontSize: '.95rem', lineHeight: 1.65, color: 'rgba(205,216,227,.78)' }}>
+            <p style={{ marginTop: '1rem', fontSize: '.95rem', lineHeight: 1.65, color: 'rgba(232,220,210,.78)' }}>
               {t('footer.tagline')}
             </p>
             <a
@@ -57,7 +57,7 @@ export default function Footer() {
           <p>
             © {year} {company.name}. {t('footer.rights')}
           </p>
-          <p style={{ color: 'rgba(205,216,227,.5)' }}>{t('footer.disclaimer')}</p>
+          <p style={{ color: 'rgba(232,220,210,.5)' }}>{t('footer.disclaimer')}</p>
         </div>
       </div>
 
@@ -71,13 +71,13 @@ export default function Footer() {
           letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;
         }
         .footer-list{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;}
-        .footer-link{font-size:.93rem;color:rgba(205,216,227,.82);transition:color .16s ease;}
+        .footer-link{font-size:.93rem;color:rgba(232,220,210,.82);transition:color .16s ease;}
         .footer-link:hover{color:var(--color-accent-400);}
-        .footer-contact li{display:flex;gap:.6rem;align-items:flex-start;font-size:.93rem;color:rgba(205,216,227,.82);}
+        .footer-contact li{display:flex;gap:.6rem;align-items:flex-start;font-size:.93rem;color:rgba(232,220,210,.82);}
         .footer-contact svg{flex-shrink:0;margin-top:1px;color:var(--color-accent-400);}
         .footer-bottom{
           display:flex;flex-direction:column;gap:.4rem;padding-top:1.5rem;
-          font-size:.85rem;color:rgba(205,216,227,.62);
+          font-size:.85rem;color:rgba(232,220,210,.62);
         }
         @media (min-width:700px){
           .footer-grid{grid-template-columns:1.6fr 1fr;align-items:start;}

@@ -138,7 +138,7 @@ export default function PortalLayout() {
           color:var(--text-muted);font-size:.9rem;font-weight:500;background:none;border:0;cursor:pointer;
           width:100%;text-align:left;}
         .portal-foot-link:hover{color:var(--accent);background:var(--surface-2);}
-        .portal-scrim{position:fixed;inset:0;background:rgba(10,21,33,.5);z-index:55;}
+        .portal-scrim{position:fixed;inset:0;background:rgba(18,9,4,.5);z-index:55;}
 
         .portal-main{flex:1;min-width:0;display:flex;flex-direction:column;}
         .portal-topbar{position:sticky;top:0;z-index:35;display:flex;align-items:center;gap:1rem;

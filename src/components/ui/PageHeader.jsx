@@ -16,7 +16,7 @@ export default function PageHeader({ badge, title, lead }) {
           padding-block:3.75rem 3.25rem;}
         .page-header-inner{position:relative;z-index:2;max-width:46rem;}
         .page-header-title{color:#fff;margin-top:1rem;font-size:clamp(1.9rem,4.2vw,2.9rem);}
-        .page-header-lead{color:rgba(226,235,243,.85);margin-top:1.1rem;font-size:1.08rem;line-height:1.6;}
+        .page-header-lead{color:rgba(246,236,228,.85);margin-top:1.1rem;font-size:1.08rem;line-height:1.6;}
       `}</style>
     </section>
   )

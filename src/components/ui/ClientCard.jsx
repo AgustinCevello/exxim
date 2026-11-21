@@ -23,7 +23,7 @@ export default function ClientCard({ client }) {
           width:68px;height:68px;border-radius:15px;font-family:var(--font-serif);
           font-weight:600;font-size:1.65rem;letter-spacing:.02em;
           color:#fff;background:linear-gradient(135deg,var(--color-navy-800),var(--color-navy-600));
-          box-shadow:0 8px 20px -10px rgba(16,32,48,.5);
+          box-shadow:0 8px 20px -10px rgba(40,22,10,.5);
         }
         .client-info{min-width:0;}
         .client-name{font-weight:700;font-size:1.22rem;color:var(--heading);line-height:1.2;}

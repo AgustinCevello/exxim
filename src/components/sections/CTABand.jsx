@@ -8,7 +8,7 @@ export default function CTABand() {
   const { t } = useI18n()
   return (
     <section className="cta-band">
-      {/* Luces violeta y fucsia con grano, como la tarjeta "gradiente con grano". */}
+      {/* Luces naranja y ámbar con grano, como la tarjeta "gradiente con grano". */}
       <GlowBackdrop variant="cta" />
 
       <div className="container-x cta-inner">
@@ -29,10 +29,10 @@ export default function CTABand() {
       </div>
 
       <style>{`
-        .cta-band{position:relative;overflow:hidden;isolation:isolate;background:#0d1024;padding-block:5rem;}
+        .cta-band{position:relative;overflow:hidden;isolation:isolate;background:var(--color-navy-950);padding-block:5rem;}
         .cta-inner{position:relative;z-index:2;text-align:center;max-width:44rem;margin-inline:auto;}
-        .cta-title{color:#fff;font-size:clamp(1.7rem,3.5vw,2.5rem);text-shadow:0 2px 24px rgba(13,16,36,.45);}
-        .cta-text{color:rgba(236,240,248,.92);margin-top:1rem;font-size:1.05rem;text-shadow:0 1px 14px rgba(13,16,36,.55);}
+        .cta-title{color:#fff;font-size:clamp(1.7rem,3.5vw,2.5rem);text-shadow:0 2px 24px rgba(22,11,5,.45);}
+        .cta-text{color:rgba(236,240,248,.92);margin-top:1rem;font-size:1.05rem;text-shadow:0 1px 14px rgba(22,11,5,.55);}
         .cta-actions{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:2rem;}
       `}</style>
     </section>

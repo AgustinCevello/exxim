@@ -184,7 +184,7 @@ export default function Navbar() {
 
         /* Scrim + drawer lateral derecho */
         .mobile-scrim{position:fixed;left:0;right:0;top:72px;bottom:0;
-          background:rgba(10,21,33,.5);z-index:54;
+          background:rgba(18,9,4,.5);z-index:54;
           opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s;}
         .mobile-scrim.is-open{opacity:1;visibility:visible;}
         .mobile-panel{
