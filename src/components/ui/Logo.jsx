@@ -23,10 +23,12 @@ export function Wordmark({ dark = false, className = '', size = '1.5rem' }) {
     <span
       className={className}
       style={{
-        fontFamily: 'var(--font-sans)',
+        // Igual que en las tarjetas: Montserrat ExtraBold Italic.
+        fontFamily: 'var(--font-display)',
         fontWeight: 800,
+        fontStyle: 'italic',
         fontSize: size,
-        letterSpacing: '-0.04em',
+        letterSpacing: '-0.02em',
         lineHeight: 1,
         display: 'inline-flex',
         alignItems: 'center',

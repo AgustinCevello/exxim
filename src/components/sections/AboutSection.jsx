@@ -65,7 +65,7 @@ export default function AboutSection() {
           overflow:hidden;padding:0;margin-top:3rem;}
         .about-sec-stat{background:var(--surface);padding:1.6rem 1.4rem;display:flex;
           flex-direction:column;gap:.1rem;align-items:flex-start;}
-        .about-sec-stat-value{font-family:var(--font-serif);font-size:2rem;font-weight:600;color:var(--heading);line-height:1;}
+        .about-sec-stat-value{font-family:var(--font-display);font-size:2rem;font-weight:800;font-style:italic;color:var(--heading);line-height:1;}
         .about-sec-stat-suffix{font-size:.82rem;color:var(--accent);font-weight:600;}
         .about-sec-stat-label{font-size:.85rem;margin-top:.35rem;}
         @media (min-width:860px){

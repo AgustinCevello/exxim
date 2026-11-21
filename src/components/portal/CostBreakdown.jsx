@@ -66,7 +66,7 @@ export default function CostBreakdown({ operation }) {
           margin-top:.4rem;padding:1rem 1.1rem;border-radius:12px;background:var(--color-navy-900);color:#fff;}
         :root[data-theme='dark'] .cost-total{background:var(--color-navy-700);}
         .cost-total span:first-child{font-weight:600;}
-        .cost-total-val{font-family:var(--font-serif);font-size:1.3rem;font-weight:600;font-variant-numeric:tabular-nums;}
+        .cost-total-val{font-family:var(--font-display);font-size:1.3rem;font-weight:600;font-variant-numeric:tabular-nums;}
       `}</style>
     </div>
   )

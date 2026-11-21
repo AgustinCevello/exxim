@@ -67,7 +67,7 @@ export default function Footer() {
           padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);
         }
         .footer-title{
-          color:#fff;font-family:var(--font-sans);font-size:.78rem;font-weight:700;
+          color:#fff;font-family:var(--font-display);font-style:italic;font-size:.78rem;font-weight:700;
           letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem;
         }
         .footer-list{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;}

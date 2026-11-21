@@ -148,7 +148,7 @@ export default function Operations() {
         .kpi-icon{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;
           border-radius:10px;flex-shrink:0;}
         .kpi-text{min-width:0;}
-        .kpi-value{font-family:var(--font-serif);font-size:1.35rem;font-weight:600;color:var(--heading);line-height:1;}
+        .kpi-value{font-family:var(--font-display);font-size:1.35rem;font-weight:600;color:var(--heading);line-height:1;}
         .kpi-label{font-size:.76rem;margin-top:.25rem;line-height:1.25;}
         .ops-filters{display:flex;flex-wrap:wrap;gap:.75rem;padding:.85rem;margin-bottom:1.25rem;}
         .filter-field{display:flex;align-items:center;gap:.5rem;background:var(--surface-2);

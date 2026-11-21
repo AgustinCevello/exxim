@@ -16,7 +16,7 @@ function NotFound() {
   return (
     <div style={{ minHeight: '60vh', display: 'grid', placeItems: 'center', padding: '3rem 1.5rem' }}>
       <div style={{ textAlign: 'center' }}>
-        <p style={{ fontFamily: 'var(--font-serif)', fontSize: '4rem', fontWeight: 600, color: 'var(--accent)' }}>404</p>
+        <p style={{ fontFamily: 'var(--font-display)', fontSize: '4rem', fontWeight: 600, color: 'var(--accent)' }}>404</p>
         <Link to="/" className="btn btn-primary" style={{ marginTop: '1rem' }}>{t('common.backHome')}</Link>
       </div>
     </div>

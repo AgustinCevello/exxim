@@ -36,7 +36,9 @@
   --color-signal-red: #d2544b;
 
   --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  /* Tipografía de marca (la misma de las tarjetas): Montserrat; los
+     títulos principales van en ExtraBold Italic, como el logo. */
+  --font-display: 'Montserrat', 'Inter', system-ui, sans-serif;
 }
 
 /* ============================================================
@@ -109,12 +111,18 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: var(--heading);
   line-height: 1.12;
   margin: 0;
+}
+h1 {
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 p {
@@ -302,9 +310,11 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.78rem;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.76rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent);
   }
@@ -327,8 +337,9 @@ p {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    font-family: var(--font-display);
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     line-height: 1;
     padding: 0.85rem 1.4rem;
     border-radius: 7px;

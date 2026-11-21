@@ -20,7 +20,7 @@ export default function ClientCard({ client }) {
           background:linear-gradient(90deg,var(--color-accent-500),var(--color-accent-300));}
         .client-mono{
           display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
-          width:68px;height:68px;border-radius:15px;font-family:var(--font-serif);
+          width:68px;height:68px;border-radius:15px;font-family:var(--font-display);
           font-weight:600;font-size:1.65rem;letter-spacing:.02em;
           color:#fff;background:linear-gradient(135deg,var(--color-navy-800),var(--color-navy-600));
           box-shadow:0 8px 20px -10px rgba(40,22,10,.5);

@@ -98,7 +98,7 @@ export default function Account() {
         .acc-green{background:rgba(46,158,107,.14);color:#1f7d52;}
         .acc-amber{background:rgba(224,163,58,.16);color:#9a6b12;}
         .acc-card-label{font-size:.78rem;}
-        .acc-card-value{font-family:var(--font-serif);font-size:1.25rem;font-weight:600;color:var(--heading);
+        .acc-card-value{font-family:var(--font-display);font-size:1.25rem;font-weight:600;color:var(--heading);
           margin-top:.15rem;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;}
 
         .acc-chart-card{padding:1.5rem;}

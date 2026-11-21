@@ -83,7 +83,7 @@ export default function Advisor() {
         .adv-card{padding:1.75rem;}
         .adv-top{display:flex;gap:1.1rem;align-items:center;margin-bottom:1.25rem;}
         .adv-avatar{display:inline-flex;align-items:center;justify-content:center;width:68px;height:68px;
-          border-radius:16px;font-family:var(--font-serif);font-size:1.7rem;font-weight:600;color:#fff;flex-shrink:0;
+          border-radius:16px;font-family:var(--font-display);font-size:1.7rem;font-weight:600;color:#fff;flex-shrink:0;
           background:linear-gradient(135deg,var(--color-navy-800),var(--color-navy-600));}
         .adv-name{font-size:1.3rem;}
         .adv-role{color:var(--accent);font-weight:600;font-size:.9rem;margin-top:.15rem;}

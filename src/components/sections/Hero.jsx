@@ -47,14 +47,20 @@ export default function Hero() {
           padding-block:4.5rem;}
         .hero-photo{
           position:absolute;inset:0;background-size:cover;background-position:center;
-          opacity:.32;
+          opacity:.62;
         }
+        /* Oscuro a la izquierda (texto legible) y abierto a la derecha (se ve la foto). */
         .hero-overlay{
           position:absolute;inset:0;
           background:
-            linear-gradient(104deg, rgba(18,9,4,.96) 0%, rgba(31,17,9,.86) 45%, rgba(31,17,9,.45) 100%),
-            linear-gradient(0deg, rgba(18,9,4,.9) 0%, rgba(18,9,4,0) 40%);
+            linear-gradient(104deg, rgba(18,9,4,.95) 0%, rgba(31,17,9,.78) 42%, rgba(31,17,9,.18) 100%),
+            linear-gradient(0deg, rgba(18,9,4,.85) 0%, rgba(18,9,4,0) 38%);
         }
+        /* En el hero la luz y el grano acompañan a la foto, no la tapan. */
+        .hero .glow-bd__a{
+          background:radial-gradient(closest-side, rgba(255,122,41,.30), rgba(255,122,41,.09) 55%, transparent);
+        }
+        .hero .glow-bd__grain{opacity:.12;}
         .hero-inner{position:relative;z-index:2;width:100%;}
         .hero-content{max-width:640px;}
         .hero-badge{margin-bottom:1.4rem;}
@@ -74,7 +80,7 @@ export default function Hero() {
         .hero-stat-div{width:1px;height:34px;background:rgba(255,255,255,.16);}
         .hero-stat{display:flex;flex-direction:column;gap:.15rem;}
         .hero-stat-value{
-          font-family:var(--font-serif);font-size:1.9rem;font-weight:600;color:#fff;line-height:1;
+          font-family:var(--font-display);font-size:1.9rem;font-weight:800;font-style:italic;color:#fff;line-height:1;
         }
         .hero-stat-label{font-size:.82rem;color:rgba(246,236,228,.72);max-width:11rem;line-height:1.35;}
         @media (max-width:520px){
