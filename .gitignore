@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Material de diseño del TP (tarjetas de presentación y presentaciones):
+# se trabaja en local, no forma parte del sitio.
+/tarjetas/
+/presentaciones/
