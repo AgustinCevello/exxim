@@ -30,7 +30,9 @@ export default function WhatsAppFab() {
       <span className="wa-fab-label">{label}</span>
 
       <style>{`
-        .wa-fab{position:fixed;right:22px;bottom:22px;z-index:70;
+        /* z-index por debajo del encabezado (60): con el menú móvil abierto,
+           el botón queda detrás del panel y del fondo oscuro. */
+        .wa-fab{position:fixed;right:22px;bottom:22px;z-index:50;
           display:inline-flex;align-items:center;justify-content:center;
           width:62px;height:62px;border-radius:50%;
           background:#25d366;color:#fff;
